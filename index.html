@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            color:rgb(207, 13, 168);
+            font-size: 20px;
+            
+        }
+        #yes{
+            background-color: transparent;
+            border: 3px solid #f40b0b;
+            border-radius: 50px;
+            -webkit-transition:all .15s ease-in-out;
+            transition: all .15s ease-in-out;
+            color: #d706c6;
+            position: absolute;
+            left: 50px;
+            width: 90px;
+            font-size: 25px;
+            padding: 8px;
+            cursor: pointer;
+        }
+        #yes:hover{
+            box-shadow: 0 0 10px 0 #c10b0b inset, 0 0 20px 2px #d50909;
+            border: 3px solid #d8184e;
+        }
+        #game-container{
+            position: relative;
+            width: 500px;
+            height:600px;
+            border: 2px solid #333;
+            margin: 5px;
+            overflow: hidden;
+            border-color: blueviolet;
+            border-style: double;
+            border-inline-start-color: #d8184e;
+        }
+        #target{
+            background-color: transparent;
+            border: 3px solid #e80c0c;
+            border-radius: 50px;
+            -webkit-transition:all .15s ease-in-out;
+            transition: all .15s ease-in-out;
+            color: #ed0ae5;
+
+            position: absolute;
+            left: 200px;
+            width: 90px;
+            font-size: 25px;
+            padding: 8px;
+            cursor: pointer;
+            transition: top 0.5s,left 0.5s ;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div class="box">
+            <div class="container">
+                <h1>Do you love me?💞</h1>
+            </div>
+            <button id="target">No</button>
+            <button id="yes">Yes</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <h1 id="result"></h1>
+    </div>
+    <script>
+        const yes = document.getElementById("yes");
+        const result = document.getElementById("result");
+        const target= document.getElementById("target");
+        function moveTarget(){
+            const maxWidth = 400;
+            const maxHeight= 400;
+
+            const randomX = Math.floor(Math.random()*maxWidth);
+            const randomY = Math.floor(Math.random()*maxHeight);
+
+            target.style.left = randomX +"px";
+            target.style.top = randomY + "px";
+        }
+
+        target.addEventListener("mouseenter",function(){
+            moveTarget();
+        });
+        yes.addEventListener("click",function(){
+            result.innerHTML = "I Love You Too Sanjana Baby😍";
+        })
+        
+    </script>
+</body>
+</html>
